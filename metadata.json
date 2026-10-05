@@ -1,0 +1,6 @@
+{
+  "name": "MotionX — Public Transport Intelligence Platform",
+  "description": "Predict demand. Reduce overcrowding. Move people smarter. MotionX transforms public transport ridership data into demand forecasts, overcrowding insights, and actionable service-allocation recommendations.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
