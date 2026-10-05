@@ -7,10 +7,12 @@ import React, { useState, useEffect } from 'react';
 import { Navbar } from './components/layout/Navbar';
 import { SimulationController } from './components/common/SimulationController';
 import { DashboardPage } from './pages/DashboardPage';
+import { UnifiedPredictorPage } from './pages/UnifiedPredictorPage';
 import { ForecastPage } from './pages/ForecastPage';
 import { RoutesPage } from './pages/RoutesPage';
 import { MapPage } from './pages/MapPage';
 import { RecommendationsPage } from './pages/RecommendationsPage';
+import { CitizenPortalPage } from './pages/CitizenPortalPage';
 import { AboutPage } from './pages/AboutPage';
 import { TransitRoute, SimulationState } from './types';
 import { INITIAL_ROUTES } from './data/mumbaiTransitData';
@@ -122,6 +124,14 @@ export default function App() {
           />
         )}
 
+        {activeTab === 'unified' && (
+          <UnifiedPredictorPage
+            routes={routes}
+            simulation={simulation}
+            onDeployUnits={handleDeployUnits}
+          />
+        )}
+
         {activeTab === 'forecast' && (
           <ForecastPage
             routes={routes}
@@ -148,6 +158,13 @@ export default function App() {
           <RecommendationsPage
             simulation={simulation}
             onDeployUnits={handleDeployUnits}
+          />
+        )}
+
+        {activeTab === 'citizen' && (
+          <CitizenPortalPage
+            routes={routes}
+            simulation={simulation}
           />
         )}
 

@@ -20,10 +20,12 @@ export const Navbar: React.FC<NavbarProps> = ({
 
   const navItems = [
     { id: 'dashboard', label: 'Dashboard' },
+    { id: 'unified', label: 'Unified 3-in-1 Engine' },
     { id: 'forecast', label: 'Demand Forecast' },
     { id: 'routes', label: 'Route Analysis' },
     { id: 'map', label: 'Overcrowding Map' },
     { id: 'recommendations', label: 'Recommendations' },
+    { id: 'citizen', label: 'Citizen Hub' },
     { id: 'about', label: 'Methodology' }
   ];
 

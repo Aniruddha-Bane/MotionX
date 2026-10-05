@@ -129,17 +129,24 @@ export const DashboardPage: React.FC<DashboardPageProps> = ({
 
           <div className="pt-2 flex flex-wrap items-center gap-3">
             <button
-              onClick={() => onNavigateTab('forecast')}
-              className="px-5 py-2.5 rounded-lg text-sm font-semibold text-slate-950 bg-cyan-400 hover:bg-cyan-300 transition-colors shadow-lg shadow-cyan-400/20 flex items-center gap-2"
+              onClick={() => onNavigateTab('unified')}
+              className="px-5 py-2.5 rounded-lg text-sm font-bold text-slate-950 bg-cyan-400 hover:bg-cyan-300 transition-colors shadow-lg shadow-cyan-400/25 flex items-center gap-2"
             >
-              Explore Forecast Engine
+              <Sparkles className="w-4 h-4" />
+              Unified 3-in-1 Predictor
+            </button>
+            <button
+              onClick={() => onNavigateTab('forecast')}
+              className="px-5 py-2.5 rounded-lg text-sm font-semibold text-slate-200 bg-slate-800 hover:bg-slate-700 border border-slate-700 hover:border-slate-600 transition-colors flex items-center gap-2"
+            >
+              Explore Forecast
               <ArrowUpRight className="w-4 h-4" />
             </button>
             <button
               onClick={() => onNavigateTab('recommendations')}
-              className="px-5 py-2.5 rounded-lg text-sm font-semibold text-slate-200 bg-slate-800 hover:bg-slate-700 border border-slate-700 hover:border-slate-600 transition-colors flex items-center gap-2"
+              className="px-5 py-2.5 rounded-lg text-sm font-semibold text-slate-300 hover:text-white transition-colors flex items-center gap-1.5"
             >
-              View Allocation Actions
+              View Recommendations
               <ChevronRight className="w-4 h-4" />
             </button>
           </div>
