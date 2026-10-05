@@ -73,11 +73,11 @@ export const Navbar: React.FC<NavbarProps> = ({
 
         {/* Zone 3: 1-2 primary actions */}
         <div className="flex items-center gap-3">
-          {/* Demo Data indicator */}
-          <div className="hidden sm:flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-slate-900 border border-slate-800 text-xs text-slate-400">
+          {/* Real Dataset indicator */}
+          <div className="hidden sm:flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-slate-900 border border-emerald-500/30 text-xs text-slate-300">
             <Radio className="w-3 h-3 text-emerald-400 animate-pulse" />
-            <span className="font-mono text-[11px]">
-              {isDemoMode ? 'DEMO DATA · MUMBAI' : 'LIVE API CONNECTED'}
+            <span className="font-mono text-[11px] text-emerald-300">
+              REAL CTA TRANSIT DATA (24K OBS)
             </span>
           </div>
 

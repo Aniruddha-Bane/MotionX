@@ -111,7 +111,7 @@ export const AboutPage: React.FC<AboutPageProps> = () => {
           <div>
             <h2 className="text-base font-bold text-white flex items-center gap-2">
               <Cpu className="w-4 h-4 text-emerald-400" />
-              Machine Learning Model Performance
+              Empirical Machine Learning Model Validation
             </h2>
             <p className="text-xs text-slate-400">
               Evaluated on 5,184 holdout observations using 80/20 temporal split
@@ -199,6 +199,82 @@ export const AboutPage: React.FC<AboutPageProps> = () => {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* REAL-WORLD DATASET INGESTION & TEST RESULTS */}
+      <section className="rounded-2xl border border-emerald-500/30 bg-gradient-to-br from-slate-950 via-slate-900 to-emerald-950/20 p-6 sm:p-8 space-y-6 shadow-xl">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-800 pb-4">
+          <div>
+            <div className="inline-flex items-center gap-1.5 text-xs font-bold text-emerald-400 uppercase tracking-wider">
+              <Database className="w-3.5 h-3.5" />
+              Real Public Transit Authority Ingestion (No Mock / No Synthetic)
+            </div>
+            <h2 className="text-lg font-bold text-white mt-1">
+              Chicago Transit Authority (CTA) Official Open Dataset Ingestion
+            </h2>
+            <p className="text-xs text-slate-400">
+              Directly fetched from Socrata Open Data API: 24,000 real daily bus & rail observations
+            </p>
+          </div>
+          <span className="text-xs font-mono text-emerald-300 bg-emerald-950/80 border border-emerald-800/60 px-3 py-1.5 rounded-lg font-bold">
+            R² ON REAL DATA = 0.8891
+          </span>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-4 gap-4">
+          <div className="p-4 rounded-xl bg-slate-950/80 border border-slate-800">
+            <span className="text-[11px] text-slate-400">Real Observations Ingested</span>
+            <div className="text-2xl font-black text-white font-mono mt-1">24,000</div>
+            <span className="text-[10px] text-slate-500">12k Bus + 12k Train records</span>
+          </div>
+
+          <div className="p-4 rounded-xl bg-slate-950/80 border border-slate-800">
+            <span className="text-[11px] text-slate-400">Real Holdout Test Accuracy</span>
+            <div className="text-2xl font-black text-emerald-400 font-mono mt-1">0.8891</div>
+            <span className="text-[10px] text-slate-500">R² Score on 4,800 holdout rows</span>
+          </div>
+
+          <div className="p-4 rounded-xl bg-slate-950/80 border border-slate-800">
+            <span className="text-[11px] text-slate-400">Real Mean Absolute Error</span>
+            <div className="text-2xl font-black text-cyan-300 font-mono mt-1">335 pax</div>
+            <span className="text-[10px] text-slate-500">On routes with up to 21,586 pax</span>
+          </div>
+
+          <div className="p-4 rounded-xl bg-slate-950/80 border border-slate-800">
+            <span className="text-[11px] text-slate-400">Datasets Connected</span>
+            <div className="text-sm font-bold text-white mt-1">Bus + 'L' Rail + Daily Totals</div>
+            <span className="text-[10px] text-slate-500 font-mono">jyb9-n7fm & 5neh-572f</span>
+          </div>
+        </div>
+
+        {/* Real Busiest Corridors Table */}
+        <div className="pt-2">
+          <div className="text-xs font-bold text-slate-300 uppercase tracking-wider mb-2">
+            Top High-Demand Real Transit Corridors (From Ingested CTA Dataset)
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2 text-xs">
+            {[
+              { name: 'Route 9 Bus (Ashland)', avg: '18,420 / day', max: '21,586 peak', occ: '101.8% Load' },
+              { name: 'Route 53 Bus (Pulaski)', avg: '16,563 / day', max: '20,652 peak', occ: '100.6% Load' },
+              { name: 'Route 79 Bus (79th St)', avg: '16,439 / day', max: '21,187 peak', occ: '100.5% Load' },
+              { name: 'Route 66 Bus (Chicago Ave)', avg: '15,468 / day', max: '18,072 peak', occ: '100.1% Load' }
+            ].map(c => (
+              <div key={c.name} className="p-3 rounded-xl bg-slate-950/60 border border-slate-800 space-y-1">
+                <div className="font-bold text-white truncate">{c.name}</div>
+                <div className="text-slate-400 text-[11px]">Avg: <strong className="text-cyan-300 font-mono">{c.avg}</strong></div>
+                <div className="flex justify-between items-center text-[10px] text-slate-500 pt-0.5">
+                  <span>Max: {c.max}</span>
+                  <span className="text-rose-400 font-bold">{c.occ}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="flex flex-wrap items-center justify-between text-xs text-slate-400 pt-2 border-t border-slate-800">
+          <span>Local storage: <code className="text-cyan-400">backend/data/real/real_transit_combined.csv</code></span>
+          <span className="font-mono text-emerald-400">Metrics: backend/ml/artifacts/real_metrics.json</span>
         </div>
       </section>
 

@@ -1,0 +1,119 @@
+{
+  "dataset_name": "Chicago Transit Authority (CTA) Open Data",
+  "dataset_source": "https://data.cityofchicago.org (Socrata Open Data API)",
+  "datasets_used": [
+    "CTA - Ridership - Bus Routes - Daily Totals by Route (jyb9-n7fm)",
+    "CTA - Ridership - 'L' Station Entries - Daily Totals (5neh-572f)",
+    "CTA - Ridership - Daily Boarding Totals (6iiy-9s97)"
+  ],
+  "total_observations": 24000,
+  "train_samples": 19200,
+  "test_samples": 4800,
+  "r2_score": 0.8891,
+  "mae": 335.39,
+  "rmse": 809.67,
+  "bus_observations": 12000,
+  "train_observations": 12000,
+  "top_real_corridors": [
+    {
+      "id": "BUS-9",
+      "name": "Route 9 Bus",
+      "mode": "BUS",
+      "total_rides": 1915721,
+      "count": 104,
+      "max_rides": 21586,
+      "avg_occupancy": 101.8,
+      "avg_rides": 18420
+    },
+    {
+      "id": "BUS-53",
+      "name": "Route 53 Bus",
+      "mode": "BUS",
+      "total_rides": 1722640,
+      "count": 104,
+      "max_rides": 20652,
+      "avg_occupancy": 100.6,
+      "avg_rides": 16563
+    },
+    {
+      "id": "BUS-79",
+      "name": "Route 79 Bus",
+      "mode": "BUS",
+      "total_rides": 1709704,
+      "count": 104,
+      "max_rides": 21187,
+      "avg_occupancy": 100.5,
+      "avg_rides": 16439
+    },
+    {
+      "id": "BUS-66",
+      "name": "Route 66 Bus",
+      "mode": "BUS",
+      "total_rides": 1608772,
+      "count": 104,
+      "max_rides": 18072,
+      "avg_occupancy": 100.1,
+      "avg_rides": 15468
+    },
+    {
+      "id": "BUS-3",
+      "name": "Route 3 Bus",
+      "mode": "BUS",
+      "total_rides": 1525252,
+      "count": 104,
+      "max_rides": 17817,
+      "avg_occupancy": 99.5,
+      "avg_rides": 14665
+    },
+    {
+      "id": "BUS-4",
+      "name": "Route 4 Bus",
+      "mode": "BUS",
+      "total_rides": 1471384,
+      "count": 104,
+      "max_rides": 17392,
+      "avg_occupancy": 99.2,
+      "avg_rides": 14147
+    },
+    {
+      "id": "BUS-8",
+      "name": "Route 8 Bus",
+      "mode": "BUS",
+      "total_rides": 1458515,
+      "count": 104,
+      "max_rides": 18383,
+      "avg_occupancy": 98.9,
+      "avg_rides": 14024
+    },
+    {
+      "id": "BUS-22",
+      "name": "Route 22 Bus",
+      "mode": "BUS",
+      "total_rides": 1456312,
+      "count": 104,
+      "max_rides": 19135,
+      "avg_occupancy": 99.1,
+      "avg_rides": 14003
+    },
+    {
+      "id": "BUS-77",
+      "name": "Route 77 Bus",
+      "mode": "BUS",
+      "total_rides": 1452161,
+      "count": 104,
+      "max_rides": 16894,
+      "avg_occupancy": 99.0,
+      "avg_rides": 13963
+    },
+    {
+      "id": "BUS-49",
+      "name": "Route 49 Bus",
+      "mode": "BUS",
+      "total_rides": 1439189,
+      "count": 104,
+      "max_rides": 16356,
+      "avg_occupancy": 99.0,
+      "avg_rides": 13838
+    }
+  ]
+}
